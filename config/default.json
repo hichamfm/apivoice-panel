@@ -1,0 +1,12 @@
+{
+  "host": "localhost",
+  "port": 80,
+  "nedb": "DATABASE",
+  "public": "../frontend/www/",
+  "auth": {
+    "token": {
+      "secret": "sa+/LSAMf5AR7I4ihNUXWXgK71XQTXeRpK+ALCs0LrVbBQAr7wbir0HhioQtp+SRcQiR26wV7QASFuC1k3Bpog=="
+    },
+    "local": {}
+  }
+}
