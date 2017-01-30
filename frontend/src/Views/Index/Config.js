@@ -21,6 +21,7 @@ import IntervalEnd from 'Index/Forms/IntervalEnd';
 import Active from 'Index/Forms/Active';
 import PinLength from 'Index/Forms/PinLength';
 import MessageAfterAuth from 'Index/Forms/MessageAfterAuth';
+import MessageRetryPin from 'Index/Forms/MessageRetryPin';
 let style;
 
 class Out extends Component {
@@ -39,6 +40,7 @@ class Out extends Component {
       <div>
           <MessageAskPin/>
           <PinLength/>
+          <MessageRetryPin/>
           <MessageAfterAuth/>
           <AlternativeNumber1/>
           <AlternativeNumber2/>
