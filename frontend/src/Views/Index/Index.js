@@ -23,6 +23,10 @@ class Out extends Component {
     }
     this.auth = this.auth.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
+    let self = this;
+    window.server.authenticate().then(function(result) {
+      self.setState({auth: true});
+    });
   }
 
   auth() {

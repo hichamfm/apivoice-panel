@@ -18,12 +18,11 @@ class Out extends Component {
   }
 
   render() {
-    console.log('numbers ', this.numbers);
     return (
       <div>
         {
           this.numbers.map(function(number) {
-            return <li>{number.number}</li>
+            return <li key={number['_id']}>{number.number}</li>
           })
         }
       </div>

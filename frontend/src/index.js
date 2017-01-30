@@ -10,7 +10,7 @@ const authentication = require('feathers-authentication/client');
 const hooks = require('feathers-hooks');
 const io = require('socket.io-client');
 
-const socket = io('http://localhost');
+const socket = io('http://localhost:808');
 window.server = feathers()
   .configure(hooks())
   .configure(socketio(socket))
