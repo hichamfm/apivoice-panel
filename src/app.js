@@ -13,6 +13,7 @@ const bodyParser = require('body-parser');
 const socketio = require('feathers-socketio');
 const middleware = require('./middleware');
 const services = require('./services');
+const fileUpload = require('express-fileupload');
 
 const app = feathers();
 
@@ -25,6 +26,7 @@ app.use(compress())
   .use('/', serveStatic( app.get('public') ))
   .use(bodyParser.json())
   .use(bodyParser.urlencoded({ extended: true }))
+  .use(fileUpload())
   .configure(hooks())
   .configure(rest())
   .configure(socketio())

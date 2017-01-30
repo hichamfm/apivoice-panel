@@ -11,6 +11,14 @@ import {
   Accordion
 } from 'react-bootstrap';
 import AddNumber from 'Index/Forms/AddNumber';
+import MessageAskPin from 'Index/Forms/MessageAskPin';
+import AlternativeNumber1 from 'Index/Forms/AlternativeNumber1';
+import AlternativeNumber2 from 'Index/Forms/AlternativeNumber2';
+import TimeBetweenCalls from 'Index/Forms/TimeBetweenCalls';
+import IntentosPin from 'Index/Forms/IntentosPin';
+import IntervalInit from 'Index/Forms/IntervalInit';
+import IntervalEnd from 'Index/Forms/IntervalEnd';
+import Active from 'Index/Forms/Active';
 let style;
 
 class Out extends Component {
@@ -27,12 +35,15 @@ class Out extends Component {
   render() {
     return (
       <div>
-        <Panel header="Añadir número">
-          <AddNumber/>
-        </Panel>
-        <Panel header="Launcher">
+          <MessageAskPin/>
+          <AlternativeNumber1/>
+          <AlternativeNumber2/>
+          <TimeBetweenCalls/>
+          <IntentosPin/>
+          <IntervalInit/>
+          <IntervalEnd/>
+          <Active/>
           <Button onClick={this.launch}>launch call</Button>
-        </Panel>
       </div>
     )
   }

@@ -11,7 +11,9 @@ module.exports = function(options) {
   options = Object.assign({}, defaults, options);
 
   return function(hook) {
+    let configService = hook.app.service('configs');
     console.log('DATA', hook.data);
+    console.log('FILES', hook.files);
     // if (!req.fields.userfield || req.fields.userfield === '') {
     //     res.send(JSON.stringify({
     //         "command": "speak_getdtmf",

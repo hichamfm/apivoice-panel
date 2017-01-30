@@ -55,6 +55,16 @@ module.exports = function(sequelize) {
       type: Sequelize.STRING,
       allowNull: true,
       defaultValue: 60
+    },
+    textoPin: {
+      type: Sequelize.STRING,
+      allowNull: false,
+      defaultValue: "Introduce Pin"
+    },
+    textoEmail: {
+      type: Sequelize.STRING,
+      allowNull: false,
+      defaultValue: ""
     }
   }, {
     freezeTableName: true

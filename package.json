@@ -25,6 +25,7 @@
     "body-parser": "^1.16.0",
     "compression": "^1.6.2",
     "cors": "^2.8.1",
+    "express-fileupload": "0.0.6",
     "feathers": "^2.0.3",
     "feathers-authentication": "^0.7.11",
     "feathers-configuration": "^0.3.3",
