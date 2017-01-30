@@ -20,11 +20,12 @@ module.exports = function(options) {
       if (!hook.data.userfield || hook.data.userfield === '') {
         hook.result = {
           "command": "speak_getdtmf",
-          "options": `netelip;Pedro;${config.textoPin};${config.pinLength * 2}000;${config.pinLength};1`,
+          "options": `netelip;Pedro;${config.textoPin};${config.textoPin/6}000;${config.pinLength};1`,
           "userfield": "1"
         }
       } else if (hook.data.userfield >= 1 && hook.data.userfield < config.intentosIntroducirPin) {
-        if (hook.data.dtmf && hook.data.dtmf !== '' && hook.data.dtmf.length === config.pinLength) {
+        console.log('dtmf', hook.data.dtmf);
+        if (hook.data.dtmf && hook.data.dtmf !== '' && hook.data.dtmf.length == config.pinLength) {
           hook.result = {
             "command": "speak",
             "options": `netelip;Pedro;${config.messageAfterAuth}`,
@@ -34,8 +35,8 @@ module.exports = function(options) {
           hook.data.userfield++;
           hook.result = {
             "command": "speak_getdtmf",
-            "options": `netelip;Pedro;${config.retryPin};${config.pinLength * 2}000;${config.pinLength};1`,
-            "userfield": ++hook.data.userfield
+            "options": `netelip;Pedro;${config.retryPin};${config.textoPin/6}000;${config.pinLength};1`,
+            "userfield": hook.data.userfield
           }
         }
       } else if (hook.data.userfield == -1) {
