@@ -20,12 +20,12 @@ module.exports = function(options) {
       if (!hook.data.userfield || hook.data.userfield === '') {
         hook.result = {
           "command": "speak_getdtmf",
-          "options": "netelip;Pedro;Introduce el pin de cuatro digitos;7000;4;1",
+          "options": `netelip;Pedro;${config.textoPin};7000;4;1`,
           "userfield": "1"
         }
-      } else if (hook.data.userfield >= 1) {
+      } else if (hook.data.userfield >= 1 && hook.data.userfield < config.intentosIntroducirPin) {
         if (hook.data.dtmf && hook.data.dtmf !== '' && hook.data.dtmf.length === 4) {
-          hook.result = J {
+          hook.result = {
             "command": "speak",
             "options": "netelip;Pedro;Autenticacion correcta",
             "userfield": "-1"
@@ -34,7 +34,7 @@ module.exports = function(options) {
           hook.data.userfield++;
           hook.result = {
             "command": "speak_getdtmf",
-            "options": `netelip;Pedro;Intento numero ${hook.data.userfield}. Introdce el pin de cuatro digitos;7000;4;1`,
+            "options": `netelip;Pedro;${config.textoPin};7000;4;1`,
             "userfield": ++hook.data.userfield
           }
         }
