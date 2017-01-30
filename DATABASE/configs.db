@@ -1,3 +1,1 @@
-{"numeroAlternativo1":"000000000","_id":"zHYOFS7JRlTGrr7E","textoPin":"Introducir pin","numeroAlternativo2":"000000000","tiempoEntreLlamadas":"60","intentosIntroducirPin":"3","intervaloEjecucionInicio":"08:00","activo":false}
-{"numeroAlternativo1":"000000000","_id":"zHYOFS7JRlTGrr7E","textoPin":"Introducir pin","numeroAlternativo2":"000000000","tiempoEntreLlamadas":"60","intentosIntroducirPin":"3","intervaloEjecucionInicio":"08:00","activo":false,"intervaloEjecucionFin":"22:00"}
 {"numeroAlternativo1":"000000000","_id":"zHYOFS7JRlTGrr7E","textoPin":"Introducir pin","numeroAlternativo2":"000000000","tiempoEntreLlamadas":"60","intentosIntroducirPin":"3","intervaloEjecucionInicio":"08:00","activo":true,"intervaloEjecucionFin":"22:00"}
