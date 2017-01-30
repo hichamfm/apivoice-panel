@@ -18,7 +18,7 @@ exports.before = {
     auth.populateUser(),
     auth.restrictToAuthenticated()
   ],
-  create: [receive()],
+  create: [],
   update: [
     auth.verifyToken(),
     auth.populateUser(),
@@ -40,7 +40,7 @@ exports.after = {
   all: [],
   find: [],
   get: [],
-  create: [],
+  create: [receive()],
   update: [],
   patch: [],
   remove: []
