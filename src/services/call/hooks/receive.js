@@ -16,32 +16,32 @@ module.exports = function(options) {
 
 
     if (!hook.data.userfield || hook.data.userfield === '') {
-        hook.result = JSON.stringify({
+        hook.result = {
             "command": "speak_getdtmf",
             "options": "netelip;Pedro;Introduce el pin de cuatro digitos;7000;4;1",
             "userfield": "1"
-        }, null, 4);
+        }
     } else if (hook.data.userfield >= 1) {
         if (hook.data.dtmf && hook.data.dtmf !== '' && hook.data.dtmf.length === 4) {
-            hook.result = JSON.stringify({
+            hook.result = J{
                 "command": "speak",
                 "options": "netelip;Pedro;Autenticacion correcta",
                 "userfield": "-1"
-            }, null, 4);
+            }
         } else {
             hook.data.userfield++;
-            hook.result = JSON.stringify({
+            hook.result = {
                 "command": "speak_getdtmf",
                 "options": `netelip;Pedro;Intento numero ${hook.data.userfield}. Introdce el pin de cuatro digitos;7000;4;1`,
                 "userfield": ++hook.data.userfield
-            }, null, 4);
+            }
         }
     } else if (hook.data.userfield == -1) {
-        hook.result = JSON.stringify({
+        hook.result = {
             "command": "hangup",
             "options": "",
             "userfield": ""
-        }, null, 4);
+        }
     }
   };
 };
